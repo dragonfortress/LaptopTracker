@@ -16,7 +16,7 @@ namespace LaptopTracker.Models
         public String Name { get; set; }
 
         [Required]
-        public DeviceType Kind { get; set; } //may be extraneous
+        public DeviceType Type { get; set; } //may be extraneous
 
         public string Description { get; set; }
 

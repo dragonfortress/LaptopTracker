@@ -8,7 +8,7 @@ using System.Web;
 [assembly: CLSCompliant(true)]
 namespace LaptopTracker.Utilities
 {
-    public static class SendEmail
+    public class SendEmail
     {
         //static void Main(string[] args)
         //{

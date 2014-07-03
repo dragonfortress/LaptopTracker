@@ -14,8 +14,8 @@ namespace LaptopTracker.Models
         //Database Id
         public int EmployeeId { get; set; }
 
-        //Suppress warning for spelling. This is spelled correctly. I could have spelled this one: "CompanyId and the other one EmployeeTableId"
-        public int CompanyId { get; set; }
+        //Suppress warning for spelling. This is spelled correctly. I could have spelled this one: "EID and the other one EmployeeTableId"
+        public int EID { get; set; }
 
         [Required]
         public String ManagerName { get; set; }

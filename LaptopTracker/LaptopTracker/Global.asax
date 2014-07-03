@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="LaptopTracker.LaptopTrackerApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="LaptopTracker.MvcApplication" Language="C#" %>

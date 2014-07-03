@@ -48,7 +48,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LaptopId,Lid,Name,Kind,Description,EmployeeId")] Laptop laptop)
+        public ActionResult Create([Bind(Include = "LaptopId,Lid,Name,Type,Description,EmployeeId")] Laptop laptop)
         {
             if (laptop != null)
             {
@@ -86,7 +86,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LaptopId,Lid,Name,Kind,Description,EmployeeId")] Laptop laptop)
+        public ActionResult Edit([Bind(Include = "LaptopId,Lid,Name,Type,Description,EmployeeId")] Laptop laptop)
         {
             if (laptop != null)
             {

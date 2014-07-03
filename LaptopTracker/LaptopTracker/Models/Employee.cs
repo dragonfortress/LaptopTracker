@@ -13,7 +13,7 @@ namespace LaptopTracker.Models
         public int EmployeeId { get; set; }
 
         //Employee Id
-        public int CompanyId { get; set; }
+        public int EID { get; set; }
 
         [Required]
         public String EmployeeName { get; set; }

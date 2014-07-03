@@ -48,7 +48,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,CompanyId,EmployeeName,Role,EmailAddress,ManagerId")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeId,EID,EmployeeName,Role,EmailAddress,ManagerId")] Employee employee)
         {
             if (employee != null)
             {
@@ -86,7 +86,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,CompanyId,EmployeeName,Role,EmailAddress,ManagerId")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeId,EID,EmployeeName,Role,EmailAddress,ManagerId")] Employee employee)
         {
             if (employee != null)
             {

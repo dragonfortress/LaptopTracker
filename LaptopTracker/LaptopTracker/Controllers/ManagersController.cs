@@ -46,7 +46,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ManagerId,EmployeeId,CompanyId,ManagerName,EmailAddress,Role")] Manager manager)
+        public ActionResult Create([Bind(Include = "ManagerId,EmployeeId,EID,ManagerName,EmailAddress,Role")] Manager manager)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace LaptopTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ManagerId,EmployeeId,CompanyId,ManagerName,EmailAddress,Role")] Manager manager)
+        public ActionResult Edit([Bind(Include = "ManagerId,EmployeeId,EID,ManagerName,EmailAddress,Role")] Manager manager)
         {
             if (ModelState.IsValid)
             {

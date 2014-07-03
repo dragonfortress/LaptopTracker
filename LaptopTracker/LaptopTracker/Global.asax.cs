@@ -9,9 +9,9 @@ using System.Web.Routing;
 
 namespace LaptopTracker
 {
-    public class LaptopTrackerApplication : System.Web.HttpApplication
+    public class MvcApplication : System.Web.HttpApplication
     {
-        protected static void Application_Start()
+        protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
