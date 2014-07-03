@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using LaptopTracker.Data.Models.EntityFramework;
 using LaptopTracker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -15,20 +16,36 @@ using Owin;
 
 namespace LaptopTracker.Controllers
 {
+    /// <summary>
+    /// Manages Logon, Logoff and user accounts
+    /// </summary>
     [Authorize]
     public class AccountController : Controller
     {
         private ApplicationUserManager _userManager;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
         public AccountController()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
+        /// <param name="userManager">The user manager.</param>
         public AccountController(ApplicationUserManager userManager)
         {
             UserManager = userManager;
         }
 
+        /// <summary>
+        /// Gets the user manager.
+        /// </summary>
+        /// <value>
+        /// The user manager.
+        /// </value>
         public ApplicationUserManager UserManager {
             get
             {
@@ -42,6 +59,11 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/LogOn
+        /// <summary>
+        /// Logs the on.
+        /// </summary>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult LogOn(Uri returnUrl)
         {
@@ -51,6 +73,12 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/LogOn
+        /// <summary>
+        /// Logs the on.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -76,6 +104,10 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/Register
+        /// <summary>
+        /// Registers this instance.
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -84,6 +116,11 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/Register
+        /// <summary>
+        /// Registers the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -117,6 +154,12 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/ConfirmEmail
+        /// <summary>
+        /// Confirms the email.
+        /// </summary>
+        /// <param name="userId">The user identifier.</param>
+        /// <param name="code">The code.</param>
+        /// <returns></returns>
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
@@ -139,6 +182,10 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/ForgotPassword
+        /// <summary>
+        /// Forgots the password.
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
@@ -147,6 +194,11 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/ForgotPassword
+        /// <summary>
+        /// Forgots the password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -175,6 +227,10 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/ForgotPasswordConfirmation
+        /// <summary>
+        /// Forgots the password confirmation.
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
         {
@@ -183,6 +239,11 @@ namespace LaptopTracker.Controllers
 	
         //
         // GET: /Account/ResetPassword
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
+        /// <param name="code">The code.</param>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
@@ -195,6 +256,11 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/ResetPassword
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -226,6 +292,10 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/ResetPasswordConfirmation
+        /// <summary>
+        /// Resets the password confirmation.
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
@@ -234,6 +304,12 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/Disassociate
+        /// <summary>
+        /// Disassociates the specified log on provider.
+        /// </summary>
+        /// <param name="logOnProvider">The log on provider.</param>
+        /// <param name="providerKey">The provider key.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Disassociate(string logOnProvider, string providerKey)
@@ -255,6 +331,11 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/Manage
+        /// <summary>
+        /// Manages the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <returns></returns>
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -270,6 +351,11 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/Manage
+        /// <summary>
+        /// Manages the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Manage(ManageUserViewModel model)
@@ -323,6 +409,12 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/ExternalLogOn
+        /// <summary>
+        /// Externals the log on.
+        /// </summary>
+        /// <param name="provider">The provider.</param>
+        /// <param name="returnUri">The return URI.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -334,6 +426,11 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/ExternalLogOnCallback
+        /// <summary>
+        /// Externals the log on callback.
+        /// </summary>
+        /// <param name="returnUri">The return URI.</param>
+        /// <returns></returns>
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLogOnCallback(Uri returnUri)
         {
@@ -361,6 +458,11 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/LinkLogOn
+        /// <summary>
+        /// Links the log on.
+        /// </summary>
+        /// <param name="provider">The provider.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LinkLogOn(string provider)
@@ -371,6 +473,10 @@ namespace LaptopTracker.Controllers
 
         //
         // GET: /Account/LinkLogOnCallback
+        /// <summary>
+        /// Links the log on callback.
+        /// </summary>
+        /// <returns></returns>
         public async Task<ActionResult> LinkLogOnCallback()
         {
             var logOnInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
@@ -388,6 +494,12 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/ExternalLogOnConfirmation
+        /// <summary>
+        /// Externals the log on confirmation.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="returnUrl">The return URL.</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -433,6 +545,10 @@ namespace LaptopTracker.Controllers
 
         //
         // POST: /Account/LogOff
+        /// <summary>
+        /// Logs the off.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
@@ -449,6 +565,10 @@ namespace LaptopTracker.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Removes the account list.
+        /// </summary>
+        /// <returns></returns>
         [ChildActionOnly]
         public ActionResult RemoveAccountList()
         {
@@ -469,7 +589,7 @@ namespace LaptopTracker.Controllers
 
         #region Helpers
         // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
+        protected internal const string XsrfKey = "XsrfId";
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -503,14 +623,6 @@ namespace LaptopTracker.Controllers
             return false;
         }
 
-        public enum ManageMessageId
-        {
-            ChangePasswordSuccess,
-            SetPasswordSuccess,
-            RemoveLogOnSuccess,
-            Error
-        }
-
         private ActionResult RedirectToLocal(Uri returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl.ToString()))
@@ -523,37 +635,6 @@ namespace LaptopTracker.Controllers
             }
         }
 
-        private class ChallengeResult : HttpUnauthorizedResult
-        {
-            public ChallengeResult(string provider, string redirectUri) : this(provider, redirectUri, null)
-            {
-            }
-
-            public ChallengeResult(string provider, string redirectUri, string userId)
-            {
-                LogOnProvider = provider;
-                RedirectUri = redirectUri;
-                UserId = userId;
-            }
-
-            private string LogOnProvider { get; set; }
-            private string RedirectUri { get; set; }
-            private string UserId { get; set; }
-
-            public override void ExecuteResult(ControllerContext context)
-            {
-                //validate context
-                if (context != null)
-                {
-                    var properties = new AuthenticationProperties() { RedirectUri = RedirectUri };
-                    if (UserId != null)
-                    {
-                        properties.Dictionary[XsrfKey] = UserId;
-                    }
-                    context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LogOnProvider); 
-                }
-            }
-        }
         #endregion
     }
 }

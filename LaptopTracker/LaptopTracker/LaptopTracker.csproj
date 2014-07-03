@@ -157,23 +157,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\EmailService.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountHelpers\ChallengeResult.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopsController.cs" />
+    <Compile Include="Controllers\AccountHelpers\ManageMessageId.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
+    <Compile Include="Data\Models\EntityFramework\ApplicationDbContext.cs" />
+    <Compile Include="Data\Models\DeviceType.cs" />
+    <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Laptop.cs" />
-    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Data\Models\Employee.cs" />
+    <Compile Include="Data\Models\AccountViewModels\ExternalLogOnConfirmationViewModel.cs" />
+    <Compile Include="Data\Models\AccountViewModels\ExternalLogOnListViewModel.cs" />
+    <Compile Include="Data\Models\AccountViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="Data\Models\EntityFramework\IdentityModels.cs" />
+    <Compile Include="Data\Models\Laptop.cs" />
+    <Compile Include="Data\Models\AccountViewModels\LogOnViewModel.cs" />
+    <Compile Include="Data\Models\Manager.cs" />
+    <Compile Include="Data\Models\AccountViewModels\ManageUserViewModel.cs" />
+    <Compile Include="Data\Models\AccountViewModels\RegisterViewModel.cs" />
+    <Compile Include="Data\Models\AccountViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utilities\SendEmail.cs" />
@@ -199,7 +212,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

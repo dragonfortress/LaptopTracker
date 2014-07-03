@@ -1,4 +1,5 @@
-﻿using LaptopTracker.Models;
+﻿using LaptopTracker.Data.Models.EntityFramework;
+using LaptopTracker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -12,9 +13,16 @@ using System;
 
 namespace LaptopTracker
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Startup
     {
-        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+        /// <summary>
+        /// Configures the authentication.
+        /// For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+        /// </summary>
+        /// <param name="app">The application.</param>
         public void ConfigureAuthentication(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request

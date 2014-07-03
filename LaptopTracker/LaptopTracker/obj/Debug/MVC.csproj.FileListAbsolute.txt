@@ -53,6 +53,7 @@ C:\LaptopTrackerMkIV\MVC\MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\LaptopTrackerMkIV\MVC\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
 C:\LaptopTrackerMkIV\MVC\MVC\obj\Debug\MVC.dll
 C:\LaptopTrackerMkIV\MVC\MVC\obj\Debug\MVC.pdb
+<<<<<<< HEAD:LaptopTracker/LaptopTracker/obj/Debug/MVC.csproj.FileListAbsolute.txt
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\bin\MVC.dll.config
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\bin\MVC.dll
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\bin\MVC.pdb
@@ -109,3 +110,5 @@ C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\obj\Debug\MVC.dll
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\obj\Debug\MVC.pdb
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\bin\MVC.dll.CodeAnalysisLog.xml
 C:\LaptopTrackerMkIV\LaptopTracker\MVC\MVC\bin\MVC.dll.lastcodeanalysissucceeded
+=======
+>>>>>>> parent of 60f4094... Added Links to Employees, Managers, and Laptops:MVC/MVC/obj/Debug/MVC.csproj.FileListAbsolute.txt

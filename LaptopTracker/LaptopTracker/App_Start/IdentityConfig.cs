@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using LaptopTracker.Data.Models.EntityFramework;
 using LaptopTracker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -9,15 +10,26 @@ using Microsoft.Owin;
 
 namespace LaptopTracker
 {
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-
+    /// <summary>
+    /// Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
+    /// </summary>
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationUserManager"/> class.
+        /// </summary>
+        /// <param name="store">The store.</param>
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
             : base(store)
         {
         }
 
+        /// <summary>
+        /// Creates the specified options.
+        /// </summary>
+        /// <param name="options">The options.</param>
+        /// <param name="context">The context.</param>
+        /// <returns></returns>
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>());
@@ -66,24 +78,6 @@ namespace LaptopTracker
                 }  
             }
 
-        }
-    }
-
-    public class EmailService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
-        }
-    }
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your sms service here to send a text message.
-            return Task.FromResult(0);
         }
     }
 }

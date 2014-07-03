@@ -5,8 +5,15 @@ using Microsoft.Ajax.Utilities;
 
 namespace LaptopTracker
 {
+    /// <summary>
+    /// Registers global filters.
+    /// </summary>
     public class FilterConfig
     {
+        /// <summary>
+        /// Registers the global filters.
+        /// </summary>
+        /// <param name="filters">The filters.</param>
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             if (filters != null)

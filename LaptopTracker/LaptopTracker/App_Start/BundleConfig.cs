@@ -9,6 +9,10 @@ namespace LaptopTracker
     public class BundleConfig
     {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
+        /// <summary>
+        /// Registers the bundles.
+        /// </summary>
+        /// <param name="bundles">The javascript bundles if they exist.</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             if (bundles != null)

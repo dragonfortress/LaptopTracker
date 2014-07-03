@@ -8,6 +8,9 @@ using System.Web;
 [assembly: CLSCompliant(true)]
 namespace LaptopTracker.Utilities
 {
+    /// <summary>
+    /// This Class sends the email to the employee and cc's the manager when the employee has too many laptops.
+    /// </summary>
     public class SendEmail
     {
         //static void Main(string[] args)
